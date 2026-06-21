@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Prime Health Consult</string>
+    <string name="title_activity_main">Prime Health Consult</string>
+    <string name="package_name">com.primehealth.consult</string>
+    <string name="custom_url_scheme">com.primehealth.consult</string>
+</resources>
