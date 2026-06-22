@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:991978966260:android:e2b5ccb580db51907b22a1",
+        "android_client_info": {
+          "package_name": "com.primehealth.consult"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkbbJbInIafzEhNhT9sWUqRcsCRFjXhk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:991978966260:android:1842dc4f430357bd7b22a1",
         "android_client_info": {
           "package_name": "com.primehealthconsult.app"
