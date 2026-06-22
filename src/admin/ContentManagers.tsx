@@ -9,7 +9,10 @@ function AdminModal({ show, onClose, title, children, onSave }: {
 }) {
   if (!show) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 overflow-y-auto">
+      className="fixed inset-0 bg-black/50"
+  onClick={() => setSelected(null)}
+/>
+<div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full max-w-2xl p-6"><div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 overflow-y-auto">
       <div className="fixed inset-0 bg-black/50" onClick={onClose} />
       <div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-y-auto">
         <div className="sticky top-0 bg-white dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between z-10">
