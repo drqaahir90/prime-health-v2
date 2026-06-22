@@ -1,4 +1,4 @@
-4import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Plus, Edit2, Trash2, X, Save } from 'lucide-react';
 import { db } from '../lib/db';
 import type { BlogPost, FAQItem, Testimonial, Poster, HomeSection, ContactMessage } from '../types';
