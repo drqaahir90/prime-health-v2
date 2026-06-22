@@ -353,7 +353,6 @@ export function ContactManager() {
       )}
       {selected && (
 
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
     <div
       className="fixed inset-0 bg-black/50"
       onClick={() => setSelected(null)}
@@ -395,7 +394,21 @@ export function ContactManager() {
 
   <div className="flex gap-2 mt-4">
     <a
-      href={`https://wa.me/${selected.phone?.replace(/\D/g, "")}?text=${encodeURIComponent(
+
+`Hello ${selected.name},
+
+Thank you for contacting Prime Health Consult.
+
+Subject:
+${selected.subject}
+
+Your message:
+${selected.message}
+
+Dr. Qaahir has reviewed your message and is replying to you.
+
+Best regards,
+Prime Health Consult" )}"}href={`https://wa.me/${selected.phone?.replace(/\D/g, "")}?text=${encodeURIComp>
 
 `Hello ${selected.name},
 
@@ -430,4 +443,85 @@ Reply
   </div>
 )}
   );
+}<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 bg-black/50"
+      onClick={() => setSelected(null)}
+    />
+
+    <div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full max-w-2xl p-6">
+      <div className="flex justify-between mb-4">
+        <h2 className="text-lg font-semibold">Message Details</h2>
+      </div>
+
+      <div className="space-y-3 text-sm">
+        <p>
+          <span className="font-medium">From:</span> {selected.name}
+        </p>
+
+        <p>
+          <span className="font-medium">Email:</span>{" "}
+          <a
+            href={`mailto:${selected.email}`}
+            className="text-primary-600"
+          >
+            {selected.email}
+          </a>
+        </p>
+
+        {selected.phone && (
+          <p>
+            <span className="font-medium">Phone:</span> {selected.phone}
+          </p>
+        )}
+
+        <p>
+          <span className="font-medium">Date:</span>{" "}
+          {new Date(selected.createdAt).toLocaleString()}
+        </p>
+
+        <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg whitespace-pre-wrap">
+          {selected.message}
+        </div>
+      </div>
+
+      <div className="flex gap-2 mt-4">
+        <a
+          href={`https://wa.me/${selected.phone?.replace(
+            /\D/g,
+            ""
+          )}?text=${encodeURIComponent(
+            `Hello ${selected.name},
+
+Thank you for contacting Prime Health Consult.
+
+Subject:
+${selected.subject}
+
+Your message:
+${selected.message}
+
+Dr. Qaahir has reviewed your message and is replying to you.
+
+Best regards,
+Prime Health Consult`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary flex-1"
+        >
+          Reply
+        </a>
+
+        <button
+          onClick={() => handleDelete(selected.id)}
+          className="btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+);
 }
