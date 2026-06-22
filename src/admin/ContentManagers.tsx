@@ -4,25 +4,52 @@ import { db } from '../lib/db';
 import type { BlogPost, FAQItem, Testimonial, Poster, HomeSection, ContactMessage } from '../types';
 
 /* ===== GENERIC CRUD MODAL PATTERN ===== */
-function AdminModal({ show, onClose, title, children, onSave }: {
-  show: boolean; onClose: () => void; title: string; children: React.ReactNode; onSave: () => void;
+function AdminModal({
+  show,
+  onClose,
+  title,
+  children,
+  onSave
+}: {
+  show: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+  onSave: () => void;
 }) {
   if (!show) return null;
+
   return (
-      className="fixed inset-0 bg-black/50"
-  onClick={() => setSelected(null)}
-/>
-<div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full max-w-2xl p-6"><div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 overflow-y-auto">
-      <div className="fixed inset-0 bg-black/50" onClick={onClose} />
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 overflow-y-auto">
+      <div
+        className="fixed inset-0 bg-black/50"
+        onClick={onClose}
+      />
+
       <div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-y-auto">
         <div className="sticky top-0 bg-white dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between z-10">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h2>
-          <button onClick={onClose} className="text-gray-400"><X className="w-5 h-5" /></button>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h2>
+
+          <button onClick={onClose} className="text-gray-400">
+            <X className="w-5 h-5" />
+          </button>
         </div>
-        <div className="p-6 space-y-4">{children}</div>
+
+        <div className="p-6 space-y-4">
+          {children}
+        </div>
+
         <div className="sticky bottom-0 bg-white dark:bg-gray-900 px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end gap-3">
-          <button onClick={onClose} className="btn-secondary">Cancel</button>
-          <button onClick={onSave} className="btn-primary"><Save className="w-4 h-4" /> Save</button>
+          <button onClick={onClose} className="btn-secondary">
+            Cancel
+          </button>
+
+          <button onClick={onSave} className="btn-primary">
+            <Save className="w-4 h-4" />
+            Save
+          </button>
         </div>
       </div>
     </div>
