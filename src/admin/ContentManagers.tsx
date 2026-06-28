@@ -364,7 +364,14 @@ export function ContactManager() {
               <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg whitespace-pre-line">{selected.message}</div>
             </div>
             <div className="flex gap-2 mt-4">
-              <a href={`mailto:${selected.email}?subject=Re: ${selected.subject}`} className="btn-primary flex-1">Reply</a>
+<a
+  href={`https://wa.me/${selected.phone?.replace(/\D/g, '')}?text=Hello%20${selected.name},%0A%0AThank%20you%20for%20contacting%20Prime%20Health%20Consult.%0A%0AWe%20are%20replying%20to%20your%20message:%0A${selected.message}%0A%0AOur%20answer:%0A%0A%0AKind%20regards,%0ADr.%20Qaahir`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary flex-1"
+>
+  Reply on WhatsApp
+</a>
               <button onClick={() => handleDelete(selected.id)} className="btn-danger"><Trash2 className="w-4 h-4" /></button>
             </div>
           </div>

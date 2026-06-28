@@ -228,12 +228,22 @@ export interface PaymentSettings {
   defaultAmount: number;
 }
 
-export interface PaymentMethod {
   id: string;
   name: string;
   type: 'evc_plus' | 'edahab' | 'jeeb' | 'other';
   number: string;
   merchantName: string;
+  active: boolean;
+  instructions: string;
+  instructionsAr?: string;
+  instructionsSo?: string;
+}export interface PaymentMethod {
+  id: string;
+  name: string;
+  type: 'evc_plus' | 'edahab' | 'jeeb' | 'other';
+  number: string;
+  merchantName: string;
+  ussdTemplate?: string;
   active: boolean;
   instructions: string;
   instructionsAr?: string;

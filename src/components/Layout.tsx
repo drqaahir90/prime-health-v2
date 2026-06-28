@@ -332,7 +332,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
             <p>&copy; {new Date().getFullYear()} {siteName || 'Prime Health Consult'}. {t('footer.rights', 'All rights reserved')}</p>
             <Link to="/admin/login" className="text-gray-500 hover:text-primary-400 transition-colors">
-              Admin
+              
             </Link>
           </div>
         </div>

@@ -45,8 +45,7 @@ export default function Login() {
           <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Heart className="w-8 h-8 text-white" fill="white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin Login</h1>
-          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Prime Health Consult</p>
+       <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Prime Health Login</h1>          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Prime Health Consult</p>
         </div>
 
         <div className="card p-6">

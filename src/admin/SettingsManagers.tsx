@@ -377,8 +377,7 @@ export function PaymentManager() {
   };
 
   const openAddMethod = () => {
-    setEditingMethod({ id: generateId(), name: '', type: 'evc_plus', number: '', merchantName: '', active: true, instructions: '', instructionsAr: '', instructionsSo: '' });
-    setShowMethodModal(true);
+setEditingMethod({ id: generateId(), name: '', type: 'evc_plus', number: '', merchantName: '', ussdTemplate: '', active: true, instructions: '', instructionsAr: '', instructionsSo: '' });    setShowMethodModal(true);
   };
 
   const openEditMethod = (method: PaymentMethod) => { setEditingMethod({ ...method }); setShowMethodModal(true); };
@@ -469,7 +468,40 @@ export function PaymentManager() {
             <div><label className="block text-sm font-medium mb-1">Name</label><input type="text" value={editingMethod.name} onChange={e => setEditingMethod({ ...editingMethod, name: e.target.value })} className="input-field" placeholder="EVC Plus" /></div>
             <div><label className="block text-sm font-medium mb-1">Type</label><select value={editingMethod.type} onChange={e => setEditingMethod({ ...editingMethod, type: e.target.value })} className="input-field"><option value="evc_plus">EVC Plus</option><option value="edahab">eDahab</option><option value="jeeb">Jeeb</option><option value="other">Other</option></select></div>
             <div><label className="block text-sm font-medium mb-1">Phone/Account Number</label><input type="text" value={editingMethod.number} onChange={e => setEditingMethod({ ...editingMethod, number: e.target.value })} className="input-field" /></div>
-            <div><label className="block text-sm font-medium mb-1">Merchant Name</label><input type="text" value={editingMethod.number} onChange={e => setEditingMethod({ ...editingMethod, merchantName: e.target.value })} className="input-field" /></div>
+<div>
+  <label className="block text-sm font-medium mb-1">
+    Merchant Name
+  </label>
+  <input
+    type="text"
+    value={editingMethod.merchantName}
+    onChange={e =>
+      setEditingMethod({
+        ...editingMethod,
+        merchantName: e.target.value
+      })
+    }
+    className="input-field"
+  />
+</div>
+<div>
+  <label className="block text-sm font-medium mb-1">
+    USSD Template
+  </label>
+  <input
+    type="text"
+    value={editingMethod.ussdTemplate || ''}
+    onChange={e =>
+      setEditingMethod({
+        ...editingMethod,
+        ussdTemplate: e.target.value
+      })
+    }
+    placeholder="*770*{number}*{amount}#"
+    className="input-field"
+  />
+</div>
+
             <div><label className="block text-sm font-medium mb-1">Instructions (EN)</label><textarea rows={2} value={editingMethod.instructions} onChange={e => setEditingMethod({ ...editingMethod, instructions: e.target.value })} className="input-field" /></div>
             <div><label className="block text-sm font-medium mb-1">Instructions (AR)</label><textarea rows={2} dir="rtl" value={editingMethod.instructionsAr || ''} onChange={e => setEditingMethod({ ...editingMethod, instructionsAr: e.target.value })} className="input-field" /></div>
             <div><label className="block text-sm font-medium mb-1">Instructions (SO)</label><textarea rows={2} value={editingMethod.instructionsSo || ''} onChange={e => setEditingMethod({ ...editingMethod, instructionsSo: e.target.value })} className="input-field" /></div>
